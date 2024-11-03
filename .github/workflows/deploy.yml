@@ -35,9 +35,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18.20.4
           cache: pnpm # 缓存设置为 pnpm
-          version: 8.14.0 # 您可以根据需要指定特定的 pnpm 版本
+          version: 9.12.1 # 您可以根据需要指定特定的 pnpm 版本
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
