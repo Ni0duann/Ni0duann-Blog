@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: "China Carlos's Blog"
-  text: "PWA FAST SDK"
-  tagline: Carlos's Blog Web Site
+  name: "Ni0duann's Blog"
+  text: "做做笔记"
+  tagline: Ni0duann's Blog Web Site
   image:
     src: /pwa.png
     alt: VitePress
