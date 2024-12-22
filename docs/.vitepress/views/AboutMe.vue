@@ -46,9 +46,9 @@
           >
             <p class="text-lg text-slate-50">你好，很高兴认识你 👋</p>
             <h1 class="text-2xl font-bold lg:break-normal lg:break-words xl:text-3xl">
-              A Chinese undergraduate From UESTC
+              A Chinese undergraduate From GDOU
             </h1>
-            <p class="text-slate-100">前端开发 / 产品设计 / 足球 🔥</p>
+            <p class="text-slate-100">前端开发 🔥</p>
           </div>
           <!-- 箴言 -->
           <div
@@ -129,14 +129,13 @@
               <div class="flex h-20 w-20 flex-shrink-0 justify-center rounded-lg bg-green-100 p-4">
                 <img class="rounded-lg" src="./img/nuxt.png" alt="" />
               </div>
-             
+
               <div class="flex h-20 w-20 flex-shrink-0 justify-center rounded-lg bg-red-400 p-4">
                 <img class="rounded-lg" src="./img/git.svg" alt="" />
               </div>
               <div class="flex h-20 w-20 flex-shrink-0 justify-center rounded-lg bg-slate-100 p-4">
                 <img class="rounded-lg" src="./img/python.svg" alt="" />
               </div>
-              
             </div>
           </div>
         </div>
@@ -154,9 +153,9 @@
           <p class="text-[12px]">工作经历</p>
           <h1 class="mt-2 text-4xl font-bold">追风赶月</h1>
           <div class="mt-4 md:text-base lg:text-xl">
-            <p class="py-1">🦄 Now. 成都 / 电子科技大学 / 毕业设计ing</p>
-            <p class="py-1">🎉 2024.8 深圳 / PCG 社交产品部 / Vue</p>
-            <p class="py-1">🚗 2024.2 北京 / Momenta / React</p>
+            <p class="py-1">🦄 Now. 广东 / 广东海洋大学 / 找实习ing</p>
+            <!-- <p class="py-1">🎉 2024.8 深圳 / PCG 社交产品部 / Vue</p>
+            <p class="py-1">🚗 2024.2 北京 / Momenta / React</p> -->
           </div>
         </div>
       </div>
@@ -169,7 +168,7 @@
           <div class="music-bg absolute h-full w-full bg-cover bg-center bg-no-repeat"></div>
           <div class="relative z-10 p-4">
             <p class="text-[12px] text-slate-200">音乐喜好</p>
-            <h1 class="mt-1.5 text-4xl font-bold text-white">古典、</h1>
+            <h1 class="mt-1.5 text-4xl font-bold text-white">流行、嘻哈</h1>
             <h1 class="mt-1.5 text-4xl font-bold text-white">欧美流行、</h1>
             <h1 class="mt-1.5 text-4xl font-bold text-white">轻音乐</h1>
             <p class="text-right text-sm text-slate-100">《Love Stroy》</p>

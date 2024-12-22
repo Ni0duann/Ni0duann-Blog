@@ -8,7 +8,7 @@ types:
   - name: 面经分享
     desc: |-
       Interview experiences
-      25 届卑微前端求职记录
+      26 届卑微前端求职记录
     link: /Notes/Interviews/
     icon: "\U0001F4DD"
   - name: 学习笔记
@@ -22,7 +22,7 @@ types:
       Personal musings
       总要有个写东西的地方
     link: /Notes/Thoughts/
-updateTime: '2024-09-22 22:05'
+updateTime: '2024-12-22 12:26'
 ---
 
 <script setup>
