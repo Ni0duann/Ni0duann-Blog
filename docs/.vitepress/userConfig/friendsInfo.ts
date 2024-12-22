@@ -10,20 +10,20 @@ export interface Friend {
 
 export const friendsInfo: Friend[] = [
   {
-    avatar: 'https://blog.zbwer.work/assets/avatar.BTzuv0Gg.jpg',
-    name: 'zbwer',
-    title: '地球其实只是一个柯基的屁股',
-    tag: 'Front-End Developer',
-    link: '模版创作者',
-    color: 'sky'
-  },
-  {
-    avatar: 'https://blog.zbwer.work/assets/avatar.BTzuv0Gg.jpg',
+    avatar: 'https://ni0duann-blog.vercel.app/docs/.vitepress/views/img/avatar.jng',
     name: 'Ni0duann',
     title: '努力努力再努力',
     tag: 'Front-End Developer',
     link: '欢迎交换友链！可参考此处信息',
     color: 'sky',
     isMe: true
+  },
+  {
+    avatar: 'https://blog.zbwer.work/assets/avatar.BTzuv0Gg.jpg',
+    name: 'zbwer',
+    title: '地球其实只是一个柯基的屁股',
+    tag: 'Front-End Developer',
+    link: 'https://blog.zbwer.work',
+    color: 'sky'
   }
 ]
