@@ -17,6 +17,12 @@ types:
       我那磕磕绊绊的开发之路
     link: /Notes/Learning/
     icon: "\U0001F3C3"
+  - name: 阅读
+    desc: |-
+      Readed mbooks
+      读书笔记
+    link: /Notes/Reading/
+    icon: "\ud83d\udcda"
   - name: 随想杂文
     desc: |-
       Personal musings
