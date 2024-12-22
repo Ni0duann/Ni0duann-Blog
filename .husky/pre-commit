@@ -1,2 +1,0 @@
-npx lint-staged --config lint-staged.config.js
-pnpm time
