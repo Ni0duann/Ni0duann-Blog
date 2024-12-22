@@ -1,0 +1,11 @@
+node_modules
+**/.vitepress/cache
+**/.vitepress/dist
+
+.vscode
+*.code-workspace
+
+# lock file
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
