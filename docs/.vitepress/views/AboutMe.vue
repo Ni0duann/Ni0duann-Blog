@@ -153,7 +153,7 @@
           <p class="text-[12px]">工作经历</p>
           <h1 class="mt-2 text-4xl font-bold">追风赶月</h1>
           <div class="mt-4 md:text-base lg:text-xl">
-            <p class="py-1">🦄 Now. 广东 / 广东海洋大学 / 找实习ing</p>
+            <p class="py-1">🦄 Now. 杭州 / 杭州玳数科技-袋鼠云 / React</p>
             <!-- <p class="py-1">🎉 2024.8 深圳 / PCG 社交产品部 / Vue</p>
             <p class="py-1">🚗 2024.2 北京 / Momenta / React</p> -->
           </div>
