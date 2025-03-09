@@ -11,8 +11,8 @@
 `current Fiber树`中的`Fiber节点`被称为`current fiber`，`workInProgress Fiber树`中的`Fiber节点`被称为`workInProgress fiber`，他们通过`alternate`属性连接。
 
 ```javascript
-currentFiber.alternate === workInProgressFiber;
-workInProgressFiber.alternate === currentFiber;
+currentFiber.alternate === workInProgressFiber
+workInProgressFiber.alternate === currentFiber
 ```
 
 `React`应用的根节点通过使`current`指针在不同`Fiber树`的`rootFiber`间切换来完成`current Fiber`树指向的切换。
@@ -133,4 +133,3 @@ Fiber 架构作为 React 的核心架构之一，为 React 应用的性能和用
 - **增量渲染和时间切片**：Fiber 架构通过增量渲染和时间切片技术，将渲染任务拆分成多个小任务，在浏览器空闲时间执行，提高了页面的响应速度和用户交互的流畅度。
 - **优先级调度**：Fiber 架构根据任务的优先级动态调度任务的执行顺序，确保高优先级任务能够优先得到处理，提高了系统的响应速度和稳定性。
 - **Concurrent Mode 和 Suspense**：Concurrent Mode 和 Suspense 是 Fiber 架构的重要特性，能够提高页面加载速度和性能表现，优化用户的交互体验。
-

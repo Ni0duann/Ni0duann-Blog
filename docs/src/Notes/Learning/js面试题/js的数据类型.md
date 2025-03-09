@@ -1,4 +1,5 @@
 ## 基本数据类型
+
 <font color=red>**7种**</font>基本数据类型
 
 number
@@ -14,8 +15,6 @@ undefined
 **symbol**
 
 **bigint**
-
-
 
 引用类型
 

@@ -17,7 +17,7 @@ export default defineConfig({
       { text: '👋 About', link: 'AboutMe.md' },
       { text: '💭 Blogs', link: '/Notes/index' },
       { text: '🦄 Projects', link: 'Projects.md' },
-      { text: '👫 Friends', link: 'Friends.md' },
+      { text: '👫 Friends', link: 'Friends.md' }
     ],
     // 文章页面左侧导航
     sidebar: {

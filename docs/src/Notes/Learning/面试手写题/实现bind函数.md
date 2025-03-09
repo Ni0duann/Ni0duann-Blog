@@ -8,14 +8,13 @@
 
 ```javascript
 Function.prototype.myBind = function (context) {
-    if (typeof this !== 'function') {
-        throw new TypeErr('need function')
-    }
-    let args = [...arguments].slice(1);
-    let fn = this;
-    return function F() {
-        return fn.apply(this instanceof F ? this : context,args.concat(...arguments));
-    }
+  if (typeof this !== 'function') {
+    throw new TypeErr('need function')
+  }
+  let args = [...arguments].slice(1)
+  let fn = this
+  return function F() {
+    return fn.apply(this instanceof F ? this : context, args.concat(...arguments))
+  }
 }
 ```
-

@@ -1,5 +1,5 @@
 ---
-tags: "阅读"
+tags: '阅读'
 ---
 
 ## Iteration(迭代)
@@ -21,11 +21,8 @@ var vals = [...it]
 
 js标准当我们迭代一个可迭代对象的时候会创建一个迭代器实例。
 
- 常用的Strings,arrays,maps,sets,and others.
+常用的Strings,arrays,maps,sets,and others.
 
 所有的可迭代对象都有三个api：分别是**key(),values(),and entries().**其中entries是全部，即包含key和value
 
 #### 手写一个迭代器
-
-
-

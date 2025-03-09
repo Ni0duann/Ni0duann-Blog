@@ -1,17 +1,12 @@
 ---
 tags: 'Webpack'
-
 ---
-
-
 
 ## 概念
 
 本质上，Webpack是一个用于**现代JavaScript应用程序**的**静态模块打包工具**。当Webpack处理应用程序时，它会在**内部**从**一个或多个入口点**构建**一个依赖图**(dependency graph)，然后将你项目中所需的每一个模块**组合**成一个或多个**bundles**，它们均为**静态资源**，用于展示你的内容。
 
 ---
-
-
 
 ## 入口(entry)
 
@@ -24,8 +19,6 @@ module.exports = {
 	entry: './path/to/my/entry/file.js'
 }
 ```
-
-
 
 ## 输出(output)
 
@@ -42,8 +35,6 @@ module.exports = {
 	},
 }
 ```
-
-
 
 ## loader
 
@@ -66,8 +57,6 @@ module.exports = {
 };
 ```
 
-
-
 ## 插件(plugin)
 
 loader用于转换某些类型的模块，而插件则可以用于执行于更广的业务。包括：打包优化，资源管理，注入环境变量。
@@ -86,27 +75,20 @@ module.exports = {
 }
 ```
 
-
-
 ## 模式(mode)
 
 通过选择 `development`, `production` 或 `none` 之中的一个，来设置 `mode` 参数，你可以启用 webpack 内置在**相应环境下的优化**。其默认值为 `production`。
 
 ```javascript
 module.exports = {
-  mode: 'production',
-};
+  mode: 'production'
+}
 ```
-
-
 
 ## 浏览器兼容性(browser compatibility)
 
 Webpack 支持所有符合 [ES5 标准](https://kangax.github.io/compat-table/es5/) 的浏览器（不支持 IE8 及以下版本）。webpack 的 `import()` 和 `require.ensure()` 需要 `Promise`。如果你想要支持旧版本浏览器，在使用这些表达式之前，还需要 [提前加载 polyfill](https://www.webpackjs.com/guides/shimming/)。
 
-
-
 ## 环境(environment)
 
 Webpack 5 运行于 Node.js v10.13.0+ 的版本。
-

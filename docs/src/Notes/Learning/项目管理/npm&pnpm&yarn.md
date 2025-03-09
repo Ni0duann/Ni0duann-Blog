@@ -29,13 +29,9 @@ npm 是node.js默认的包管理工具，最早由node社区开发并捆绑到no
 - 缺点：
   1. 安装速度较慢，占用空间大
 
-
-
 ## Yarn
 
- Yarn 是一个 JavaScript 包管理工具，最早由 Facebook 推出，主要用于管理项目中的依赖包。和 npm 类似，yarn 解决了在 JavaScript 项目中下载、安装和管理依赖的需求，并在一定程度上改进了 npm 的一些缺点，比如性能、稳定性和安全性。
-
-
+Yarn 是一个 JavaScript 包管理工具，最早由 Facebook 推出，主要用于管理项目中的依赖包。和 npm 类似，yarn 解决了在 JavaScript 项目中下载、安装和管理依赖的需求，并在一定程度上改进了 npm 的一些缺点，比如性能、稳定性和安全性。
 
 ### 核心：
 
@@ -79,13 +75,9 @@ npm 是node.js默认的包管理工具，最早由node社区开发并捆绑到no
 
     `Yarn` 的依赖解析虽然比传统 `npm` 更快，但在依赖结构复杂、依赖版本冲突较多的情况下，解析和处理依赖关系可能会变慢。尤其在 monorepo 中，`Yarn` 需要处理多个包之间的依赖关系，可能出现解析速度不如 `pnpm` 的情况。
 
-
-
 ## 什么是pnpm
 
 pnpm 又称 performant npm ，即高性能的npm，旨在解决 `npm` 和 `yarn` 的一些效率和资源管理问题。
-
-
 
 - ### 核心：
 
@@ -119,8 +111,6 @@ pnpm 又称 performant npm ，即高性能的npm，旨在解决 `npm` 和 `yarn`
 
       有些项目依赖于本地 `node_modules` 结构，或者需要直接访问 `node_modules` 中的文件。在 `pnpm` 使用内容寻址和符号链接时，这可能会导致某些工具无法正常运行。
 
-  
-
   ## 常用命令
 
   ### 常用命令：
@@ -130,7 +120,7 @@ pnpm 又称 performant npm ，即高性能的npm，旨在解决 `npm` 和 `yarn`
   | **操作**                  | **npm**                        | **yarn**                          | **pnpm**                          |
   | ------------------------- | ------------------------------ | --------------------------------- | --------------------------------- |
   | **初始化项目**            | `npm init`                     | `yarn init`                       | `pnpm init`                       |
-  | *(-y为自动确认默认选项）* | `npm init -y`                  | `yarn init -y`                    | `pnpm init -y`                    |
+  | _(-y为自动确认默认选项）_ | `npm init -y`                  | `yarn init -y`                    | `pnpm init -y`                    |
   | **安装依赖**              | `npm install`                  | `yarn`                            | `pnpm install`                    |
   | **安装单个依赖**          | `npm install <pkg>`            | `yarn add <pkg>`                  | `pnpm add <pkg>`                  |
   | **安装特定版本**          | `npm install <pkg>@<ver>`      | `yarn add <pkg>@<ver>`            | `pnpm add <pkg>@<ver>`            |
@@ -145,11 +135,7 @@ pnpm 又称 performant npm ，即高性能的npm，旨在解决 `npm` 和 `yarn`
   | **创建锁定文件**          | `package-lock.json`            | `yarn.lock`                       | `pnpm-lock.yaml`                  |
   | **列出全局包**            | `npm list -g --depth=0`        | `yarn global list`                | `pnpm list -g --depth=0`          |
 
-  
-
   作者：欸嘿ccchur
   链接：https://juejin.cn/post/7433427781928386571
   来源：稀土掘金
   著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-  

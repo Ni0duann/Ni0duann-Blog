@@ -9,5 +9,5 @@ export const fileName2Title: Record<string, string> = {
   Interviews: '🏃 八股面经',
   Learning: '🎨 学习笔记',
   Reading: '📚 阅读笔记',
-  Thoughts: '🔮 随想杂文',
+  Thoughts: '🔮 随想杂文'
 }
