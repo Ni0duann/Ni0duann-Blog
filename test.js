@@ -40,3 +40,5 @@ function myPoromiseAll(promises) {
     })
   })
 }
+
+template('hello, {{name}}')({ name: 'world' }) // hello, world
