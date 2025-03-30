@@ -1,3 +1,6 @@
+const { rejects } = require('assert')
+const { resolve } = require('path')
+
 const deepCopy = (obj, map = new Map()) => {
   let reg = /^(Function|Map|Set|Date|RegExp|Symbol|RegExp)$/
   if (reg.test(obj.constructor.name)) {
@@ -18,27 +21,29 @@ const deepCopy = (obj, map = new Map()) => {
 }
 
 function myPoromiseAll(promises) {
-  return new Promise((resolve, rejece) => {
-    let ans = []
+  return new Promise((resolve, rejects) => {
+    let result = []
     let count = 0
-    if (promises.length == 0) {
+    if (promises.length === 0) {
       resolve(ans)
       return
     }
-    promises.foreach((promise, index) => {
-      Promise.resolve(promise)
-        .then((value) => {
-          ans[index] = value
-          count++
-          if (count == promises.length) {
-            resolve(ans)
-          }
-        })
-        .catch((err) => {
-          rejece(err)
-        })
+    promises.forEach((promise, index) => {
+      Promise.resolve(promise).then((res) => {
+        result[index] = res
+        count++
+        if (count === promises.length) {
+          resolve(result)
+        }
+      }) 
+      .catch(err => {
+        rejects(err)
+      })
     })
   })
 }
 
 template('hello, {{name}}')({ name: 'world' }) // hello, world
+function template(str, data) {
+  return str.replace(/\{\{(.+?)\}\}/g, (_, key) => data[key.trim()])
+}
