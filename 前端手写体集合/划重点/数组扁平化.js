@@ -12,4 +12,20 @@ function flat(arr) {
   }
   return res
 }
-console.log(flat([1, 2, [3, 4, [5, 6]]]))
+
+function _flat(arr) {
+  if (!Array.isArray(arr)) {
+    return [arr]
+  }
+  let ans = []
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      ans = ans.concat(_flat(arr[i]))
+    } else {
+      ans.push(arr[i])
+    }
+  }
+  return ans
+}
+
+console.log(_flat([1, 2, [3, 4, [5, 6]]]))
