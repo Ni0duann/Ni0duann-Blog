@@ -1,3 +1,9 @@
+
+
+![c2d17508256ed7d8afeefeb3d4b77a5d.jpg](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2759f6898e994bcaa24c698d368d5c90~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=965&h=762&s=80106&e=jpg&b=000000)
+
+
+
 ### 1. 物理层（Physical Layer）
 
 - **功能**：该层是整个网络通信的基础，负责处理物理介质上的信号传输，包括定义传输介质（如电缆、光纤、无线等）的物理特性、信号的编码与解码、数据传输的速率、接口的机械和电气特性等。
