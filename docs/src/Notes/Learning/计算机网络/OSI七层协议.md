@@ -1,8 +1,4 @@
-
-
-![c2d17508256ed7d8afeefeb3d4b77a5d.jpg](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2759f6898e994bcaa24c698d368d5c90~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=965&h=762&s=80106&e=jpg&b=000000)
-
-
+![image-20250504235055144](img/image-20250504235055144.png)
 
 ### 1. 物理层（Physical Layer）
 
