@@ -17,10 +17,13 @@ async function getFileModificationTime(filePath) {
     // 获取文件头部元数据
     const meta = matter(content)
 
+    // 获取父文件夹名称作为tags
+    const parentDir = path.basename(path.dirname(filePath))
     // 将文件修改时间写入文件头部
     const newContent = matter.stringify(content, {
       ...meta.data,
-      updateTime: formattedTime
+      updateTime: formattedTime,
+      tags: parentDir
     })
     // 写入文件
     await fs.writeFile(filePath, newContent)
