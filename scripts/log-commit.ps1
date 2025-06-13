@@ -5,5 +5,5 @@
 
 $Date = Get-Date -Format "yyyy-MM-dd"
 git add .
-git commit -m "log: :sparkles: 更新日志 - $Date"
-Write-Host "✅ 已提交日志变更: log: 更新日志 - $Date"
+git commit -m "log: :sparkles: 打卡 - $Date"
+Write-Host "✅ 已提交日志变更: log: 打卡 - $Date"
