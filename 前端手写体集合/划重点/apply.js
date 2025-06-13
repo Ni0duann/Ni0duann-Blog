@@ -6,7 +6,7 @@ Function.prototype.myApply = function (context, args = []) {
   context = context || window
   context[fnSymbol] = this
   let res = context[fnSymbol](...args)
-  delete context.fn
+  delete context[fnSymbol]
   return res
 }
 // 测试代码
