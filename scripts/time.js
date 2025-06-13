@@ -10,9 +10,7 @@ import path from 'path'
 async function getFileModificationTime(filePath) {
   try {
     // 获取文件修改时间
-    const stats = await fs.stat(filePath)
-    const modificationTime = new Date(stats.mtime)
-    const formattedTime = dayjs(modificationTime).format('YYYY-MM-DD HH:mm')
+    const formattedTime = dayjs().format('YYYY-MM-DD HH:mm')
 
     // 读取文件内容
     const content = await fs.readFile(filePath, 'utf-8')
