@@ -22,7 +22,8 @@ module.exports = {
         'ci', // 修改 CI 配置、脚本
         'revert', // 回滚 commit
         'chore', // 对构建过程或辅助工具和库的更改（不影响源文件、测试用例）
-        'wip' // 对构建过程或辅助工具和库的更改（不影响源文件、测试用例）
+        'wip', // 对构建过程或辅助工具和库的更改（不影响源文件、测试用例）
+        'log' // 添加或修改日志记录
       ]
     ],
     'subject-case': [0] // subject大小写不做校验
@@ -57,6 +58,7 @@ module.exports = {
         { value: "revert",   name: "回退:     ↩️   回滚 commit",emoji: ":rewind:"},
         { value: "chore",    name: "其他:     🛠️   对构建过程或辅助工具和库的更改（不影响源文件、测试用例）", emoji: ":hammer:"},
         { value: "wip",      name: "开发中:   🚧  开发阶段临时提交", emoji: ":construction:"},
+      { value: "log",      name: "日志:     ✨  添加或修改日志记录", emoji: ":sparkles:"},
       ],
     useEmoji: true,
     emojiAlign: 'center',
