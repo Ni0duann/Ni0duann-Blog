@@ -1,5 +1,5 @@
 ---
-updateTime: '2025-07-21 20:39'
+updateTime: '2025-07-22 17:08'
 tags: 百度
 ---
 > [!NOTE]
@@ -16,29 +16,29 @@ tags: 百度
 ## 方案
 ```javascript
 // 封装rem适配H5项目
-(function rem() { 
-  let dw = 750  // 设计图宽度
-  let sw = window.screen.width  // 屏幕宽度
-  let fontSize = (sw / dw * 100)        // 方案1
-  // let fontSize = (sw / dw)            // 方案2
-  let oHtml = document.getElementsByTagName('html')[0]
-  oHtml.style.fontSize = fontSize + 'px'
+const setRootFontSize = () => {
+    const docEl = document.documentElement;
+    const width = docEl.clientWidth || window.innerWidth;
 
-  // 设置边界
-  const boundary = ()=>{
-    if(sw>580){
-      oHtml.style.fontSize = 64 + 'px'
+    // 边界值控制 (375px-750px)
+    const minWidth = 375;
+    const maxWidth = 750;
+    const constrainedWidth = Math.max(minWidth, Math.min(maxWidth, width));
+
+    // 基准计算 (设计稿375px → 1rem=100px)
+    docEl.style.fontSize = `${constrainedWidth / 3.75}px`;
+};
+
+// 初始化
+setRootFontSize();
+// 窗口变化时重置
+window.addEventListener('resize', setRootFontSize);
+// 页面加载时重置
+window.addEventListener('pageshow', e => {
+    // 处理页面缓存时的font-size大小重置
+    if (e.persisted) {
+        setRootFontSize();
     }
-    if(sw<300){
-      oHtml.style.fontSize = 40 + 'px'
-    }
-  }
-  boundary()
-  
-  window.onresize = function (event) {
-    rem();
-    boundary();
-  }
-})();
+});
 
 ```
