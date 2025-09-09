@@ -1,6 +1,6 @@
-import { defineConfig } from 'vitepress'
-import { fileURLToPath, URL } from 'node:url'
-import { getSidebar } from './utils/getSidebar'
+import { defineConfig } from 'vitepress';
+import { fileURLToPath, URL } from 'node:url';
+import { getSidebar } from './utils/getSidebar';
 export default defineConfig({
   title: "Ni0duann's Blog",
   titleTemplate: 'Ni0duann',
@@ -53,4 +53,4 @@ export default defineConfig({
   markdown: {
     math: true
   }
-})
+});

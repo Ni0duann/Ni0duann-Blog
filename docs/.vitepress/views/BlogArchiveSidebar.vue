@@ -59,30 +59,30 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive } from 'vue'
-import { type Category } from '../utils/types.js'
-import { useRouter } from 'vitepress'
+import { onMounted, reactive } from 'vue';
+import { type Category } from '../utils/types.js';
+import { useRouter } from 'vitepress';
 
-const router = useRouter()
-const { types, features } = defineProps(['types', 'features'])
-const categories: Category[] = [...types]
+const router = useRouter();
+const { types, features } = defineProps(['types', 'features']);
+const categories: Category[] = [...types];
 
 // 打开文章链接
-const openLink = (link: string | undefined) => link && router.go(link)
+const openLink = (link: string | undefined) => link && router.go(link);
 
 // 随机一言
 const quoteInfo = reactive({
   string: '',
   from: ''
-})
+});
 
 onMounted(async () => {
   fetch('https://v1.hitokoto.cn?c=a&c=b&c=d&c=i&min_length=10')
     .then((response) => response.json())
     .then(({ hitokoto, from }) => {
-      quoteInfo.string = hitokoto
-      quoteInfo.from = from
+      quoteInfo.string = hitokoto;
+      quoteInfo.from = from;
     })
-    .catch(console.error)
-})
+    .catch(console.error);
+});
 </script>

@@ -17,62 +17,62 @@
 </template>
 
 <script setup lang="ts">
-import { CSSProperties, onMounted, ref } from 'vue'
-import emojiJson from './emoji-compact.json'
+import { CSSProperties, onMounted, ref } from 'vue';
+import emojiJson from './emoji-compact.json';
 
-const emojis: string[] = emojiJson
+const emojis: string[] = emojiJson;
 
 const useEmojiBackground = () => {
-  const emojiBgRef = ref<HTMLElement | null>(null)
-  const renderEmojis = ref<string[][]>([])
+  const emojiBgRef = ref<HTMLElement | null>(null);
+  const renderEmojis = ref<string[][]>([]);
 
   const getRadomStyle = () => {
     return {
       animationDuration: `${Math.random() * 60 + 60}s`,
       animationDirection: Math.random() > 0.5 ? 'reverse' : 'normal'
-    } as CSSProperties
-  }
+    } as CSSProperties;
+  };
 
   const randomEmoji = () => {
-    const index = Math.floor(Math.random() * emojis.length)
-    return emojis.at(index)!
-  }
+    const index = Math.floor(Math.random() * emojis.length);
+    return emojis.at(index)!;
+  };
 
   const randomEmojis = (len: number) => {
-    return new Array(len).fill(0).map(() => randomEmoji())
-  }
+    return new Array(len).fill(0).map(() => randomEmoji());
+  };
 
   const getRenderEmojis = () => {
-    const height = emojiBgRef.value?.clientHeight || 0
-    const countLines = Math.floor(height / 40)
-    const emojiPerLine = Math.floor(window.innerWidth / 40) * 2
-    const interval = 5
+    const height = emojiBgRef.value?.clientHeight || 0;
+    const countLines = Math.floor(height / 40);
+    const emojiPerLine = Math.floor(window.innerWidth / 40) * 2;
+    const interval = 5;
 
     const renderChunk = (start: number, end: number) => {
-      if (start >= end) return
-      if (start >= countLines) return
+      if (start >= end) return;
+      if (start >= countLines) return;
 
       const chunk = new Array(Math.min(end, countLines) - start)
         .fill(0)
-        .map(() => randomEmojis(emojiPerLine))
-      renderEmojis.value = [...renderEmojis.value, ...chunk]
+        .map(() => randomEmojis(emojiPerLine));
+      renderEmojis.value = [...renderEmojis.value, ...chunk];
 
       requestAnimationFrame(() => {
-        renderChunk(end, end + interval)
-      })
-    }
-    renderEmojis.value = []
-    renderChunk(0, interval)
-  }
+        renderChunk(end, end + interval);
+      });
+    };
+    renderEmojis.value = [];
+    renderChunk(0, interval);
+  };
 
-  return { renderEmojis, getRenderEmojis, emojiBgRef, getRadomStyle }
-}
+  return { renderEmojis, getRenderEmojis, emojiBgRef, getRadomStyle };
+};
 
-const { renderEmojis, getRenderEmojis, emojiBgRef, getRadomStyle } = useEmojiBackground()
+const { renderEmojis, getRenderEmojis, emojiBgRef, getRadomStyle } = useEmojiBackground();
 
 onMounted(() => {
-  getRenderEmojis()
-})
+  getRenderEmojis();
+});
 </script>
 
 <style scoped>

@@ -1,3 +1,7 @@
+---
+updateTime: '2025-09-09 11:40'
+tags: 力扣hoot100
+---
 ```javascript
 function hardMan(name) {
   // sleep函数
@@ -28,6 +32,5 @@ function hardMan(name) {
   return this;
 }
 
-hardMan("潘潘").restFirst(3).study("敲码");
+hardMan('潘潘').restFirst(3).study('敲码');
 ```
-

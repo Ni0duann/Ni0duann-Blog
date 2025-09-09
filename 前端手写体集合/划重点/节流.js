@@ -1,19 +1,19 @@
 function throttle(fn, delay) {
-  let timer = null
+  let timer = null;
   return function (...args) {
     if (!timer) {
       timer = setTimeout(() => {
-        fn.apply(this, args)
-        timer = null
-      }, delay)
+        fn.apply(this, args);
+        timer = null;
+      }, delay);
     }
-  }
+  };
 }
 
 const throttleTest = throttle(() => {
-  console.log('throttle')
-}, 1000)
+  console.log('throttle');
+}, 1000);
 
 setInterval(() => {
-  throttleTest()
-}, 60)
+  throttleTest();
+}, 60);

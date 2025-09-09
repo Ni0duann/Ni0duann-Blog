@@ -36,33 +36,33 @@
 </template>
 
 <script setup lang="ts">
-import { type Post } from '../../utils/types.js'
-import { fileName2Title } from '../../userConfig/translations.js'
-import { useRouter } from 'vitepress'
-import { RiCalendarLine } from '@remixicon/vue'
+import { type Post } from '../../utils/types.js';
+import { fileName2Title } from '../../userConfig/translations.js';
+import { useRouter } from 'vitepress';
+import { RiCalendarLine } from '@remixicon/vue';
 
-const router = useRouter()
-const { post, flow } = defineProps(['post', 'flow'])
+const router = useRouter();
+const { post, flow } = defineProps(['post', 'flow']);
 
 // 获取文章标题信息，使用用户自定义的标题或是 md 文件名称
 const getTitle = (post: Post): string => {
-  const userTitle = post.frontmatter?.title
-  if (userTitle) return userTitle
+  const userTitle = post.frontmatter?.title;
+  if (userTitle) return userTitle;
 
-  const { url } = post
-  const matches = url.match(/.*\/(.*.html)/)
-  let fileName = matches && matches[1].replace('.html', '')
+  const { url } = post;
+  const matches = url.match(/.*\/(.*.html)/);
+  let fileName = matches && matches[1].replace('.html', '');
   // 如果匹配成功，返回匹配的部分作为标题，否则返回一个默认标题
-  if (fileName) return fileName2Title[fileName] || fileName
-  return 'Error Title'
-}
+  if (fileName) return fileName2Title[fileName] || fileName;
+  return 'Error Title';
+};
 
 // 获取文章的前两个tag
 const getTags = (post: Post) => {
-  const rawTagString: string = post.frontmatter.tags
-  return rawTagString ? rawTagString.split('/').slice(0, 2) : []
-}
+  const rawTagString: string = post.frontmatter.tags;
+  return rawTagString ? rawTagString.split('/').slice(0, 2) : [];
+};
 
 // 打开文章链接
-const openLink = (link: string) => router.go(link)
+const openLink = (link: string) => router.go(link);
 </script>

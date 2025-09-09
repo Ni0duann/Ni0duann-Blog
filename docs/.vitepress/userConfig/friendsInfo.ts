@@ -1,11 +1,11 @@
 export interface Friend {
-  avatar?: string // 头像链接
-  name: string // 用户 id
-  link: string // 博客链接
-  title?: string // 用户头衔
-  tag?: string // 用户标签
-  color?: string // 标签颜色
-  isMe?: boolean // 是否是自己
+  avatar?: string; // 头像链接
+  name: string; // 用户 id
+  link: string; // 博客链接
+  title?: string; // 用户头衔
+  tag?: string; // 用户标签
+  color?: string; // 标签颜色
+  isMe?: boolean; // 是否是自己
 }
 
 export const friendsInfo: Friend[] = [
@@ -27,4 +27,4 @@ export const friendsInfo: Friend[] = [
     link: 'https://blog.zbwer.work',
     color: 'sky'
   }
-]
+];

@@ -35,28 +35,28 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, onBeforeUnmount } from 'vue'
-import EmojiBackground from '../../components/EmojiBackground/index.vue'
-import { RiGithubLine } from '@remixicon/vue'
-import { useRouter } from 'vitepress'
-import { Vue3Lottie } from 'vue3-lottie'
-import lottieData from '../../assets/dora.json'
+import { onMounted, ref, onBeforeUnmount } from 'vue';
+import EmojiBackground from '../../components/EmojiBackground/index.vue';
+import { RiGithubLine } from '@remixicon/vue';
+import { useRouter } from 'vitepress';
+import { Vue3Lottie } from 'vue3-lottie';
+import lottieData from '../../assets/dora.json';
 
-const returnToTopRef = ref<HTMLElement | null>(null)
+const returnToTopRef = ref<HTMLElement | null>(null);
 
-const router = useRouter()
+const router = useRouter();
 const gotoGithub = () => {
-  window.open('https://github.com/Ni0duann')
-}
+  window.open('https://github.com/Ni0duann');
+};
 
 onMounted(() => {
-  returnToTopRef.value = document.querySelector('.VPLocalNav.empty.fixed')
-  if (returnToTopRef.value) returnToTopRef.value.style.zIndex = '-1000'
-})
+  returnToTopRef.value = document.querySelector('.VPLocalNav.empty.fixed');
+  if (returnToTopRef.value) returnToTopRef.value.style.zIndex = '-1000';
+});
 
 onBeforeUnmount(() => {
-  if (returnToTopRef.value) returnToTopRef.value.style.zIndex = '1000'
-})
+  if (returnToTopRef.value) returnToTopRef.value.style.zIndex = '1000';
+});
 </script>
 
 <style scoped>
@@ -95,7 +95,8 @@ onBeforeUnmount(() => {
 
 .button:hover::before {
   top: -70%;
-  background-image: radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
+  background-image:
+    radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
     radial-gradient(circle, transparent 20%, var(--primary-color) 20%, transparent 30%),
     radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
     radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
@@ -168,7 +169,8 @@ onBeforeUnmount(() => {
 
 .button:hover::after {
   bottom: -70%;
-  background-image: radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
+  background-image:
+    radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
     radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
     radial-gradient(circle, transparent 10%, var(--primary-color) 15%, transparent 20%),
     radial-gradient(circle, var(--primary-color) 20%, transparent 20%),

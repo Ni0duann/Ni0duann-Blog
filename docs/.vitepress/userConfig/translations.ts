@@ -10,4 +10,4 @@ export const fileName2Title: Record<string, string> = {
   Learning: '🎨 学习笔记',
   Reading: '📚 阅读笔记',
   Thoughts: '🔮 随想杂文'
-}
+};

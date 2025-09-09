@@ -1,4 +1,4 @@
-import { Post } from './types.js'
+import { Post } from './types.js';
 
 /**
  * 格式化文章更新时间
@@ -9,8 +9,8 @@ export function formatDate(raw: string | undefined): Post['date'] {
     return {
       time: 0,
       string: ''
-    }
-  const date = new Date(raw)
+    };
+  const date = new Date(raw);
   // date.setHours(12);
   return {
     time: +date,
@@ -19,5 +19,5 @@ export function formatDate(raw: string | undefined): Post['date'] {
       month: 'long',
       day: 'numeric'
     })
-  }
+  };
 }

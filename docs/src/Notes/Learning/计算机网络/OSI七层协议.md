@@ -1,3 +1,7 @@
+---
+updateTime: '2025-09-09 11:40'
+tags: 计算机网络
+---
 ![image-20250504235055144](img/image-20250504235055144.png)
 
 ### 1. 物理层（Physical Layer）

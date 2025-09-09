@@ -1,7 +1,7 @@
-type LikeString<T> = T extends String ? true : false
+type LikeString<T> = T extends String ? true : false;
 
-let isNumber: LikeString<number>
-let isString: LikeString<string>
+let isNumber: LikeString<number>;
+let isString: LikeString<string>;
 
-isNumber = false
-isString = true
+isNumber = false;
+isString = true;

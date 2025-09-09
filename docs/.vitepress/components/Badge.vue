@@ -5,8 +5,8 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-const { color, light } = defineProps(['color', 'light'])
+import { computed } from 'vue';
+const { color, light } = defineProps(['color', 'light']);
 
 const colorClasses = {
   sky: { light: 'text-sky-600 bg-sky-500/10 dark:bg-sky-100', dark: 'bg-sky-500 text-white' },
@@ -24,12 +24,12 @@ const colorClasses = {
     dark: 'bg-green-500 text-white'
   },
   default: { light: 'text-black bg-black/5 dark:bg-white/80', dark: 'text-black bg-black/5' }
-}
+};
 
 const badgeClass = computed(() => {
-  const selectedColor = colorClasses[color] || colorClasses.default
-  return light ? selectedColor.light : selectedColor.dark
-})
+  const selectedColor = colorClasses[color] || colorClasses.default;
+  return light ? selectedColor.light : selectedColor.dark;
+});
 </script>
 
 <style scoped>

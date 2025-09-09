@@ -1,24 +1,22 @@
 ---
-updateTime: '2025-07-14 20:41'
+updateTime: '2025-09-09 11:40'
 tags: 百度
 ---
 
-
-
-
 ## 代码风格检查 eslint 安装
-``` bash
+
+```bash
 # js
 npm install --save-dev eslint @babel/core @babel/eslint-parser
-# vue 
+# vue
 npm install --save-dev eslint vue-eslint-parser @babel/core @babel/eslint-parser eslint-plugin-vue
 # react
 npm install --save-dev eslint @babel/core @babel/eslint-parser eslint-plugin-react
-# atom 
-npm install --save-dev eslint @baidu/eslint-plugin-duer @babel/core @babel/eslint-parser 
+# atom
+npm install --save-dev eslint @baidu/eslint-plugin-duer @babel/core @babel/eslint-parser
 # ts
 npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-# vue-ts 
+# vue-ts
 npm install --save-dev eslint vue-eslint-parser @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-vue
 # react-ts
 npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react
@@ -27,13 +25,14 @@ npm install --save-dev eslint vue-eslint-parser @typescript-eslint/parser @types
 ```
 
 ## 代码格式化
-``` bash
+
+```bash
 npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 ### 配置文件
 
-``` js
+```js
 // .prettier.js  http://gitlab.baidu.com/duerfe/pipeline-procurator/raw/master/.prettierrc.js
 module.exports = {
     arrowParens: 'avoid',

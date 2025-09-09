@@ -10,16 +10,16 @@
 </template>
 
 <script setup lang="ts">
-import { type Component } from 'vue'
+import { type Component } from 'vue';
 
 interface LinkTextProps {
-  text: string
-  link: string
-  mode?: 'self' | 'blank'
-  icon?: Component
+  text: string;
+  link: string;
+  mode?: 'self' | 'blank';
+  icon?: Component;
 }
 
 const props = withDefaults(defineProps<LinkTextProps>(), {
   mode: 'blank'
-})
+});
 </script>

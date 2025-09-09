@@ -28,27 +28,27 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-const projectsInfo = defineProps(['banner', 'title', 'description', 'link', 'tag'])
+import { computed } from 'vue';
+const projectsInfo = defineProps(['banner', 'title', 'description', 'link', 'tag']);
 
 const littleBadgeColor = computed(() => {
   switch (projectsInfo.tag) {
     case 'JavaScript':
-      return 'bg-yellow-400 text-white'
+      return 'bg-yellow-400 text-white';
     case 'Python':
-      return 'bg-sky-700 text-white'
+      return 'bg-sky-700 text-white';
     case 'Vue':
-      return 'bg-teal-400 text-white'
+      return 'bg-teal-400 text-white';
     case 'TypeScript':
-      return 'bg-sky-400 text-white'
+      return 'bg-sky-400 text-white';
     case 'C++':
-      return 'bg-red-400 text-white'
+      return 'bg-red-400 text-white';
     default:
-      return 'border'
+      return 'border';
   }
-})
+});
 
 function openLink() {
-  window.open(projectsInfo.link, '_blank')
+  window.open(projectsInfo.link, '_blank');
 }
 </script>

@@ -1,6 +1,6 @@
 ---
 tags: 工程化学习
-updateTime: '2025-08-17 02:52'
+updateTime: '2025-09-09 11:40'
 ---
 
 ## 概念
@@ -83,7 +83,7 @@ module.exports = {
 ```javascript
 module.exports = {
   mode: 'production'
-}
+};
 ```
 
 ## 浏览器兼容性(browser compatibility)

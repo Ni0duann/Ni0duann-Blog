@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-const { desc, link, icon } = defineProps(['desc', 'link', 'icon'])
+const { desc, link, icon } = defineProps(['desc', 'link', 'icon']);
 function openLink() {
-  window.open(link, '_blank')
+  window.open(link, '_blank');
 }
 </script>

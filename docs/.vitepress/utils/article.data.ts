@@ -1,9 +1,9 @@
-import { createContentLoader } from 'vitepress'
-import { formatDate } from './formatDate.js'
-import { Post } from './types.js'
+import { createContentLoader } from 'vitepress';
+import { formatDate } from './formatDate.js';
+import { Post } from './types.js';
 
-declare const data: Post[]
-export { data }
+declare const data: Post[];
+export { data };
 
 /**
  * 返回 src/Notes/ 目录下所有 md 文档信息
@@ -17,6 +17,6 @@ export default createContentLoader('/Notes/**/*.md', {
         date: formatDate(frontmatter.updateTime)
       }))
       .filter((post) => /.html/.test(post.url) && !post.frontmatter.hidden)
-      .sort((a, b) => b.date.time - a.date.time)
+      .sort((a, b) => b.date.time - a.date.time);
   }
-})
+});

@@ -1,3 +1,7 @@
+---
+updateTime: '2025-09-09 11:40'
+tags: 前端八股文
+---
 在 React 里，`useState`、`useEffect` 这类 React Hook 不能写在逻辑语句（像 `if`、`for`、`while` 循环等）里面，主要是为了保证 Hook 的调用顺序具有一致性。下面为你详细解释：
 
 ### 1. React Hook 调用顺序的重要性
@@ -5,16 +9,6 @@
 React 借助 Hook 的调用顺序来关联状态和对应的 Hook 调用。每次组件渲染时，React 都按相同顺序去调用 Hook。举例说明：
 
 jsx
-
-
-
-
-
-
-
-
-
-
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -37,17 +31,11 @@ function Example() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 }
 ```
-
-
-
-
 
 在这个例子中，每次组件渲染时，React 都会按以下顺序调用 Hook：
 
@@ -61,16 +49,6 @@ function Example() {
 要是把 Hook 写在逻辑语句里，那么每次渲染时 Hook 的调用顺序就可能不一样。示例如下：
 
 jsx
-
-
-
-
-
-
-
-
-
-
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -88,9 +66,7 @@ function BadExample() {
 
   return (
     <div>
-      <button onClick={() => setCondition(!condition)}>
-        Toggle condition
-      </button>
+      <button onClick={() => setCondition(!condition)}>Toggle condition</button>
     </div>
   );
 }

@@ -1,41 +1,41 @@
 function promiseAll(promises) {
   return new Promise((resolve, reject) => {
-    let result = []
-    let count = 0
+    let result = [];
+    let count = 0;
     promises.forEach((promise, index) => {
       Promise.resolve(promise)
         .then((res) => {
-          result[index] = res
-          count++
+          result[index] = res;
+          count++;
           if (count === promises.length) {
-            resolve(result)
+            resolve(result);
           }
         })
         .catch((error) => {
-          reject(error)
-        })
-    })
-  })
+          reject(error);
+        });
+    });
+  });
 }
 
 function myPromiseAll(promises) {
   return new Promise((resolve, reject) => {
-    let ans = []
-    let count = 0
+    let ans = [];
+    let count = 0;
     promises.forEach((promise, index) => {
       Promise.resolve(promise)
         .then((res) => {
-          ans[index] = res
-          count++
+          ans[index] = res;
+          count++;
           if (count === promises.length) {
-            resolve(ans)
+            resolve(ans);
           }
         })
         .catch((error) => {
-          reject(error)
-        })
-    })
-  })
+          reject(error);
+        });
+    });
+  });
 }
 
 // 重点：

@@ -43,22 +43,22 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import Badge from '../../components/Badge.vue'
-import { RiExternalLinkLine } from '@remixicon/vue'
-import { Friend } from '../../userConfig/friendsInfo'
+import { computed } from 'vue';
+import Badge from '../../components/Badge.vue';
+import { RiExternalLinkLine } from '@remixicon/vue';
+import { Friend } from '../../userConfig/friendsInfo';
 
-const friendsInfo = defineProps<Friend>()
+const friendsInfo = defineProps<Friend>();
 
 const shortLink = computed(() => {
-  let baseLink = friendsInfo.link
-  const regex = /^(http|https):\/\/(.*?)(\/)?$/
-  return baseLink.replace(regex, '$2')
-})
+  let baseLink = friendsInfo.link;
+  const regex = /^(http|https):\/\/(.*?)(\/)?$/;
+  return baseLink.replace(regex, '$2');
+});
 
 function openLink() {
-  if (friendsInfo.isMe) return
-  window.open(friendsInfo.link, '_blank')
+  if (friendsInfo.isMe) return;
+  window.open(friendsInfo.link, '_blank');
 }
 </script>
 
@@ -87,12 +87,14 @@ function openLink() {
 
 .bg-me-card {
   background-size: 20px 20px;
-  background-image: linear-gradient(90deg, rgba(60, 10, 30, 0.1) 3%, transparent 0),
+  background-image:
+    linear-gradient(90deg, rgba(60, 10, 30, 0.1) 3%, transparent 0),
     linear-gradient(1turn, rgba(60, 10, 30, 0.1) 3%, transparent 0);
 }
 .dark .bg-me-card {
   background-size: 20px 20px;
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 3%, transparent 0),
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 3%, transparent 0),
     linear-gradient(1turn, rgba(255, 255, 255, 0.1) 3%, transparent 0);
 }
 </style>

@@ -1,31 +1,31 @@
 function flat(arr) {
   if (!Array.isArray(arr)) {
-    return [arr]
+    return [arr];
   }
-  let res = []
+  let res = [];
   for (let x of arr) {
     if (Array.isArray(x)) {
-      res = res.concat(flat(x))
+      res = res.concat(flat(x));
     } else {
-      res.push(x)
+      res.push(x);
     }
   }
-  return res
+  return res;
 }
 
 function _flat(arr) {
   if (!Array.isArray(arr)) {
-    return [arr]
+    return [arr];
   }
-  let ans = []
+  let ans = [];
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
-      ans = ans.concat(_flat(arr[i]))
+      ans = [...ans, ..._flat(arr[i])];
     } else {
-      ans.push(arr[i])
+      ans.push(arr[i]);
     }
   }
-  return ans
+  return ans;
 }
 
-console.log(_flat([1, 2, [3, 4, [5, 6]]]))
+console.log(_flat([1, 2, [3, 4, [5, 6]]]));

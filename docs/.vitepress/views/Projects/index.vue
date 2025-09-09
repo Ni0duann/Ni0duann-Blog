@@ -13,9 +13,9 @@
 </template>
 
 <script setup>
-import { VPTeamPage, VPTeamPageTitle } from 'vitepress/theme'
-import ProjectCard from './ProjectCard.vue'
-import { projectsInfo } from '../../userConfig/projectsInfo'
+import { VPTeamPage, VPTeamPageTitle } from 'vitepress/theme';
+import ProjectCard from './ProjectCard.vue';
+import { projectsInfo } from '../../userConfig/projectsInfo';
 </script>
 
 <style scoped>

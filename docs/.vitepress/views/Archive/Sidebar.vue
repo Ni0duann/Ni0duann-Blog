@@ -66,45 +66,46 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive } from 'vue'
-import { type Category } from '../../utils/types.js'
-import { useRouter } from 'vitepress'
+import { onMounted, reactive } from 'vue';
+import { type Category } from '../../utils/types.js';
+import { useRouter } from 'vitepress';
 
-const router = useRouter()
-const { types, features } = defineProps(['types', 'features'])
-const categories: Category[] = [...types]
+const router = useRouter();
+const { types, features } = defineProps(['types', 'features']);
+const categories: Category[] = [...types];
 
 const THEME_MAP = {
   blue: 'from-blue-400 to-sky-400 dark:from-blue-600/80 dark:to-sky-600/80',
   green: 'from-teal-400 to-emerald-400 dark:from-teal-500/80 dark:to-emerald-500/80',
   orange: 'from-orange-400 to-amber-400 dark:from-orange-400/80 dark:to-amber-400/80'
-}
-const THEME_ARRAY = Object.values(THEME_MAP)
+};
+const THEME_ARRAY = Object.values(THEME_MAP);
 
 // 打开文章链接
-const openLink = (link: string | undefined) => link && router.go(link)
+const openLink = (link: string | undefined) => link && router.go(link);
 
 // 随机一言
 const quoteInfo = reactive({
   string: '姜黄色的猫是突然决定要走的',
   from: '猫不在乎'
-})
+});
 
 onMounted(async () => {
   fetch('https://v1.hitokoto.cn?c=a&c=b&c=d&c=i')
     .then((response) => response.json())
     .then(({ hitokoto, from }) => {
-      quoteInfo.string = hitokoto
-      quoteInfo.from = from
+      quoteInfo.string = hitokoto;
+      quoteInfo.from = from;
     })
-    .catch(console.error)
-})
+    .catch(console.error);
+});
 </script>
 
 <style scoped>
 .bg-text-card {
   background-size: 20px 20px;
-  background-image: linear-gradient(90deg, rgba(60, 10, 30, 0.1) 3%, transparent 0),
+  background-image:
+    linear-gradient(90deg, rgba(60, 10, 30, 0.1) 3%, transparent 0),
     linear-gradient(1turn, rgba(60, 10, 30, 0.1) 3%, transparent 0);
 }
 </style>

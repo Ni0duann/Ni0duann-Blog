@@ -1,3 +1,7 @@
+---
+updateTime: '2025-09-09 11:40'
+tags: React
+---
 ## 双缓存
 
 > [!NOTE]
@@ -11,8 +15,8 @@
 `current Fiber树`中的`Fiber节点`被称为`current fiber`，`workInProgress Fiber树`中的`Fiber节点`被称为`workInProgress fiber`，他们通过`alternate`属性连接。
 
 ```javascript
-currentFiber.alternate === workInProgressFiber
-workInProgressFiber.alternate === currentFiber
+currentFiber.alternate === workInProgressFiber;
+workInProgressFiber.alternate === currentFiber;
 ```
 
 `React`应用的根节点通过使`current`指针在不同`Fiber树`的`rootFiber`间切换来完成`current Fiber`树指向的切换。

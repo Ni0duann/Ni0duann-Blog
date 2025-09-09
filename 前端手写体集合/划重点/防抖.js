@@ -1,43 +1,43 @@
 function debounce(func, wait, immediate) {
-  var timeout, result
+  var timeout, result;
 
   var debounced = function () {
-    var context = this
-    var args = arguments
+    var context = this;
+    var args = arguments;
 
-    if (timeout) clearTimeout(timeout)
+    if (timeout) clearTimeout(timeout);
     if (immediate) {
       // 如果已经执行过，不再执行
-      var callNow = !timeout
-      console.log('callNow', callNow)
+      var callNow = !timeout;
+      console.log('callNow', callNow);
       timeout = setTimeout(function () {
-        timeout = null
-      }, wait)
-      if (callNow) result = func.apply(context, args)
+        timeout = null;
+      }, wait);
+      if (callNow) result = func.apply(context, args);
     } else {
       timeout = setTimeout(function () {
-        func.apply(context, args)
-      }, wait)
+        func.apply(context, args);
+      }, wait);
     }
-    return result
-  }
+    return result;
+  };
 
   debounced.cancel = function () {
-    clearTimeout(timeout)
-    timeout = null
-  }
+    clearTimeout(timeout);
+    timeout = null;
+  };
 
-  return debounced
+  return debounced;
 }
 
 const debounceTest = debounce(
   () => {
-    console.log('debounce')
+    console.log('debounce');
   },
   1000,
   true
-)
+);
 
 setInterval(() => {
-  debounceTest()
-}, 1001)
+  debounceTest();
+}, 1001);
