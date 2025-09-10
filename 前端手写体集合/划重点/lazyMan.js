@@ -1,5 +1,3 @@
-const { log } = require('console');
-
 class lazyMan {
   constructor(name) {
     this.name = name;

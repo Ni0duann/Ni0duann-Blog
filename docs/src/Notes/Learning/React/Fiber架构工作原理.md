@@ -1,5 +1,5 @@
 ---
-updateTime: '2025-09-09 11:40'
+updateTime: '2025-09-10 16:55'
 tags: React
 ---
 ## 双缓存
@@ -42,7 +42,7 @@ workInProgressFiber.alternate === currentFiber;
 
 #### 不同优先级的任务
 
-```arduino
+```Javascript
 arduino 代码解读复制代码// 无优先级任务
 export const NoPriority = 0;
 // 立即执行任务
