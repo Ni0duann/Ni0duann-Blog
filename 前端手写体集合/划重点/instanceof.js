@@ -10,3 +10,7 @@ function myInstanceOf(target, constructor) {
   }
   return false; // 直到原型链顶端，返回false
 }
+
+myInstanceOf({}, Object); // true
+myInstanceOf([], Array); // true
+myInstanceOf(1, Number); // false

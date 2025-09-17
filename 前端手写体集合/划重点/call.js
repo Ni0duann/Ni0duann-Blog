@@ -11,7 +11,7 @@ Function.prototype.myCall = function (context = window, ...args) {
   return result;
 };
 
-测试代码;
+//测试代码;
 function introduce(hobby, hobby2, hobby3) {
   console.log(
     `My name is ${this.name} and I like ${hobby}. I also like ${hobby2} and ${hobby3} . I am ${this.age} years old.`

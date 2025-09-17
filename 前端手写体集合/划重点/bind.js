@@ -22,7 +22,7 @@ function Person(name, age) {
 const obj = { value: 42 };
 const BoundPerson = Person.myBind(obj, 'Alice');
 
-console.log(BoundPerson); // 输出: [Function: F]
+console.log(BoundPerson.age); // 输出: [Function: F]
 
 // 使用 new 调用绑定后的构造函数
 const instance = new BoundPerson(25);

@@ -1,84 +1,44 @@
-class RequestParallelWithRetry {
-  requestList;
-  retryCount;
-  map = {};
-  result = [];
-  parallelCount;
-  constructor(requestList = [], retryCount = 3, parallelCount = 2) {
-    this.requestList = requestList;
-    this.retryCount = retryCount;
-    this.parallelCount = parallelCount;
-    // 需要给每个方法添加标记
-    this.requestList.forEach((request, index) => {
-      request._index = index;
-      request._retryCount = 0;
-      this.map[index] = request;
-    });
-    console.log(this.map);
+// 三个核心函数,start,setPromise,run
+// start: 输入URL将并发池填满,并执行最快的一个(Promise.race)
+// setPromise:将输入的URL包装成请求,并正式加入并发池
+// run:每当并发池中完成一个任务，就再次塞入一个任务,并执行
+
+class PromisePool {
+  constructor(max, fn, urls) {
+    this.max = max; // 最大并发数
+    this.fn = fn; // 请求函数
+    this.pool = []; // 并发池
+    this.urls = urls; // 剩余的请求地址
   }
-  send() {
-    return new Promise((resolve) => {
-      // 1. 将所有的网络请求进行包装，使得其返回结果中携带有_index
-      // 2. 发送所有的网络请求
-      let waitQueue = [...this.requestList];
-      let sendQueue = [];
 
-      const sendAllSettled = () => {
-        waitQueue.splice(0, this.parallelCount).forEach((request) => {
-          sendQueue.push(this._wrapRequest(request));
-        });
-        Promise.allSettled(sendQueue).then((value) => {
-          // 3. 清除发送队列
-          sendQueue = [];
-          console.log('请求队列中的请求都完成了', value);
-          // 4. 检查是否存在失败的请求
-          value.forEach((result) => {
-            if (result.status === 'fulfilled') {
-              const { value, index } = result.value;
-              this.result[index] = { value, status: 'fulfilled' };
-            } else if (result.status === 'rejected') {
-              const { reason, index } = result.reason;
-              const request = this.map[index];
-              if (request._retryCount < this.retryCount) {
-                waitQueue.push(request);
-                request._retryCount++;
-              } else {
-                this.result[index] = { reason, status: 'rejected' };
-              }
-            }
-          });
-          //  5. 检查队列中是否还需要发送请求
-          if (waitQueue.length) {
-            sendAllSettled();
-          } else {
-            resolve(this.result);
-          }
-        });
-      };
+  start() {
+    // 填满并发池
+    while (this.pool.length < this.max && this.urls.length) {
+      this.setPromise(this.urls.shift());
+    }
+    this.run(Promise.race(this.pool));
+  }
 
-      sendAllSettled();
+  setPromise(url) {
+    if (!url) return;
+    const promise = this.fn(url);
+    this.pool.push(promise);
+    console.log('并发池:', this.pool.length, '剩余请求:', this.urls.length);
+    promise.finally(() => {
+      this.pool = this.pool.filter((p) => p !== promise);
+      console.log('并发池:', this.pool.length, '剩余请求:', this.urls.length);
     });
   }
-  _wrapRequest(request) {
-    return new Promise((resolve, reject) => {
-      request()
-        .then((value) => {
-          resolve({
-            value,
-            index: request._index
-          });
-        })
-        .catch((reason) => {
-          reject({
-            reason,
-            index: request._index
-          });
-        });
+
+  run(race) {
+    race.then(() => {
+      if (this.urls.length) {
+        this.setPromise(this.urls.shift());
+        this.run(Promise.race(this.pool));
+      }
     });
   }
 }
-
-new RequestParallelWithRetry([request1, request2, request3]).send();
 
 function request1() {
   return new Promise((resolve) => {
@@ -92,7 +52,7 @@ function request2() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log('请求完毕222');
-      reject(222);
+      resolve(222);
     }, 2000);
   });
 }
@@ -100,7 +60,23 @@ function request3() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log('请求完毕333');
-      reject(333);
+      resolve(333);
     }, 3000);
   });
 }
+
+const arr = new PromisePool(
+  2,
+  (url) => {
+    if (url === 'url1') {
+      return request1();
+    } else if (url === 'url2') {
+      return request2();
+    } else if (url === 'url3') {
+      return request3();
+    }
+  },
+  ['url1', 'url2', 'url3']
+);
+
+arr.start();

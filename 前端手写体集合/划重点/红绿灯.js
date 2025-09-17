@@ -14,7 +14,6 @@ function light(cb, wait) {
   return new Promise((resolve) => {
     setTimeout(() => {
       cb();
-      console.log('wait', wait);
       resolve();
     }, wait);
   });
